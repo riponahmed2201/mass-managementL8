@@ -1,3 +1,11 @@
+
+<style>
+    .main-sidebar .sidebar-menu li ul.dropdown-menu li a:hover {
+        color: #6777ef;
+        background-color: inherit;
+    }
+</style>
+
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
@@ -7,38 +15,41 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
-            <li class="dropdown active">
+            <li class="dropdown {{ request()->is('admin/dashboard') ? 'active' :''}}">
                 <a href="{{route('admin.dashboard')}}" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
+
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Food Category</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="chat.html">All Food Category</a></li>
+                    <li><a class="nav-link" href="portfolio.html">Create Food Category</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Food Item Name</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="email-inbox.html">All Food Item Name</a></li>
+                    <li><a class="nav-link" href="email-compose.html">Create Food Item Name</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-header">Expense</li>
+            <li class="dropdown">
+                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Expense</span></a>
+                <ul class="dropdown-menu">
+                    <li><a class="nav-link" href="icon-font-awesome.html">All Expense</a></li>
+                    <li><a class="nav-link" href="icon-material.html">Create Expense</a></li>
+                </ul>
+            </li>
+
+            <li class="menu-header">Member Managment</li>
             <li class="dropdown">
                 <a href="#" class="menu-toggle nav-link has-dropdown"><i
                         data-feather="briefcase"></i><span>Member</span></a>
                 <ul class="dropdown-menu">
                     <li><a class="nav-link" href="{{route('member.index')}}">All Member</a></li>
                     <li><a class="nav-link" href="{{route('member.create')}}">Create Member</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Apps</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="chat.html">Chat</a></li>
-                    <li><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-                </ul>
-            </li>
-            <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Email</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="email-inbox.html">Inbox</a></li>
-                    <li><a class="nav-link" href="email-compose.html">Compose</a></li>
-                </ul>
-            </li>
-
-            <li class="menu-header">UI Elements</li>
-            <li class="dropdown">
-                <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="feather"></i><span>Icons</span></a>
-                <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="icon-font-awesome.html">Font Awesome</a></li>
-                    <li><a class="nav-link" href="icon-material.html">Material Design</a></li>
                 </ul>
             </li>
         </ul>

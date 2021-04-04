@@ -10,4 +10,4 @@
 <link rel="stylesheet" href="{{asset('assets/backend/css/custom.css')}}">
 <link rel='shortcut icon' type='image/x-icon' href='{{asset('assets/backend/img/favicon.ico')}}' />
 
-@yield('stylesheets')
+@yield('stylesheet')
