@@ -9,4 +9,7 @@ class Member extends Model
 {
     use HasFactory;
 
+    /**
+     * @var mixed
+     */
 }

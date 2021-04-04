@@ -1,5 +1,6 @@
 @extends('backend.master')
 
+@section('admin_title','Admin | All Member')
 
 @section('stylesheet')
     <link rel="stylesheet" href="{{asset('assets/backend/bundles/datatables/datatables.min.css')}}">
@@ -11,15 +12,21 @@
         <div class="section-body">
             <div class="row">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card card-primary">
                         <div class="card-header">
                             <h4>All Member</h4>
+                            <div class="card-header-action">
+                                <a href="{{route('member.create')}}" class="btn btn-outline-primary">
+                                    <i class="fa fa-plus-circle"></i> Create Member
+                                </a>
+                            </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <table class="table table-striped table-hover" id="tableExport" style="width:100%;">
                                     <thead>
                                         <tr>
+                                            <th>#</th>
                                             <th>Full Name</th>
                                             <th>Photo</th>
                                             <th>Email</th>
@@ -30,18 +37,23 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    @foreach($members as $member)
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
-                                            <td>61</td>
-                                            <td>2011/04/25</td>
-                                            <td>$320,800</td>
+                                            <td>{{$loop->iteration}}</td>
+                                            <td>{{$member->name}}</td>
                                             <td>
-                                                <a href="" class="btn btn-sm btn-outline-info"> <i class=" fa fa-edit"></i> </a>
-                                                <a href="" class="btn btn-sm btn-outline-danger"> <i class=" fa fa-trash-alt"></i> </a>
+                                                <img style="width: 100px; height: 100px" src="{{asset('uploads/member/'.$member->photo)}}" alt="">
+                                            </td>
+                                            <td>{{$member->email}}</td>
+                                            <td>{{$member->phone}}</td>
+                                            <td>{{$member->nid}}</td>
+                                            <td>{{$member->address}}</td>
+                                            <td>
+                                                <a href="{{route('member.edit',$member->id)}}" class="btn btn-sm btn-outline-info"> <i class=" fa fa-edit"></i> </a>
+                                                <a href="{{route('member.destroy',$member->id)}}" class="btn btn-sm btn-outline-danger"> <i class=" fa fa-trash-alt"></i> </a>
                                             </td>
                                         </tr>
+                                    @endforeach
                                     </tbody>
                                 </table>
                             </div>

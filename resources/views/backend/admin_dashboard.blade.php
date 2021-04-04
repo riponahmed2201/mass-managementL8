@@ -1,5 +1,7 @@
 @extends('backend.master')
 
+@section('admin_title','Admin | Dashboard')
+
 @section('content')
     <section class="section">
         <div class="row ">
