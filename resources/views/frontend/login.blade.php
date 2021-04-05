@@ -43,7 +43,7 @@
                                     <div class="d-block">
                                         <label for="password" class="control-label">Password</label>
                                         <div class="float-right">
-                                            <a href="auth-forgot-password.html" class="text-small">
+                                            <a href="#" class="text-small">
                                                 Forgot Password?
                                             </a>
                                         </div>
@@ -83,7 +83,7 @@
                         </div>
                     </div>
                     <div class="mt-5 text-muted text-center">
-                        Don't have an account? <a href="auth-register.html">Create One</a>
+                        Don't have an account? <a href="{{route('showRegisterForm')}}">Create One</a>
                     </div>
                 </div>
             </div>
