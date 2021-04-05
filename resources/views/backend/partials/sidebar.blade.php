@@ -17,10 +17,11 @@
             <li class="dropdown">
                 <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="command"></i><span>Food Category</span></a>
                 <ul class="dropdown-menu">
-                    <li><a class="nav-link" href="chat.html">All Food Category</a></li>
-                    <li><a class="nav-link" href="portfolio.html">Create Food Category</a></li>
+                    <li><a class="nav-link" href="{{route('food.category.index')}}">All Food Category</a></li>
+                    <li><a class="nav-link" href="{{route('food.category.create')}}">Create Food Category</a></li>
                 </ul>
             </li>
+
             <li class="dropdown">
                 <a href="#" class="menu-toggle nav-link has-dropdown"><i data-feather="mail"></i><span>Food Item Name</span></a>
                 <ul class="dropdown-menu">

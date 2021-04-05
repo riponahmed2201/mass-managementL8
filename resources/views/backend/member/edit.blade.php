@@ -16,7 +16,6 @@
                 </div>
             </div>
 
-
             <form action="{{route('member.update',$member->id)}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="card-body">
